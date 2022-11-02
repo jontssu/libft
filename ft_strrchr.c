@@ -6,14 +6,14 @@
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 19:47:50 by jole              #+#    #+#             */
-/*   Updated: 2022/10/26 21:04:15 by jole             ###   ########.fr       */
+/*   Updated: 2022/11/02 15:20:51 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
-	
+
 	p = 0;
 	while (*s != 0)
 	{
@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	if (c == 0)
-		p = (char *)s;	
+		p = (char *)s;
 	if (p == 0)
 		return (0);
 	return (p);

@@ -40,12 +40,12 @@ int	main(void)
 //	printf("%s\n", l);
 //	printf("%s\n", n);
 //	printf("-----\n");
-	char p[111]="Helloworld!";
-	char q[111]="!";
-	char r[111]="HelloWorld!";
-	char s[111]="!";
-	printf("%zu\n", strlcat(p, q, 100));
-	printf("%zu\n", ft_strlcat(r, s, 100));
+//	char p[111]="Helloworld!";
+//	char q[111]="!";
+//	char r[111]="HelloWorld!";
+//	char s[111]="!";
+//	printf("%zu\n", strlcat(p, q, 100));
+//	printf("%zu\n", ft_strlcat(r, s, 100));
 //	printf("%s\n", p);
 //	printf("%s\n", r);
 //	printf("%d\n", ft_toupper('g'));
@@ -89,8 +89,18 @@ int	main(void)
 //	char d[] = "567";
 //	printf("%s\n", strnstr(a, b, 5));
 //	printf("%s\n", ft_strnstr(c, d, 5));
-//	printf("%d\n", atoi("-9372036854775809"));	
-//	printf("%d\n", ft_atoi("-9372036854775809"))	
+//	printf("%d\n", atoi("9223372036854775815"));	
+//	printf("%d\n", ft_atoi("9223372036854775815"));	
+//	printf("%d\n", atoi("-9223372036854775815"));	
+//	printf("%d\n", ft_atoi("-9223372036854775815"));	
+//	printf("%d\n", atoi("-2147483648"));	
+//	printf("%d\n", ft_atoi("-2147483648"));	
+//	printf("%d\n", atoi("2147483647"));	
+//	printf("%d\n", ft_atoi("2147483647"));	
+//	printf("%d\n", atoi("   123"));	
+//	printf("%d\n", ft_atoi("   123"));	
+//	printf("%d\n", atoi(" -22"));	
+//	printf("%d\n", ft_atoi(" -22"));	
 //	printf("%s\n", calloc(10, 4));
 //	printf("%s\n", ft_calloc(10, 4));
 //	char s[50] = "12345";
@@ -115,7 +125,11 @@ int	main(void)
 //	{
 //		printf("%s\n", array[i]);
 //		i++;
-//		}
-	return (0);	
+//	}
+//	printf("%s\n", ft_itoa(-2147483648));
+//	printf("%s\n", ft_itoa(156));
+//	printf("%s\n", ft_itoa(-623));
+//	printf("%s\n", ft_itoa(-0));
+	ft_putnbr_fd(-2147483608, 1);
+	return (0);
 }
-

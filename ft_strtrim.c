@@ -6,7 +6,7 @@
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 18:07:21 by jole              #+#    #+#             */
-/*   Updated: 2022/10/31 15:44:58 by jole             ###   ########.fr       */
+/*   Updated: 2022/11/02 15:21:08 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,28 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	int		flen;
+	int		len;
 	char	*p;
-	char	*p2;
+	char	*save;
 
+	if (!s1)
+		return (0);
 	i = 0;
-	flen = ft_strlen(s1) + 1;    //flen = 7
-	while (ft_strchr(set, *s1))
+	len = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]) && i < len)
+		i++;
+	while (ft_strchr(set, s1[len - 1]) && i < len)
+		len--;
+	p = malloc(len - i + 1);
+	if (!p)
+		return (0);
+	save = p;
+	while (len - i)
 	{
-		i++;					// i = 6
-		s1++;
+		*p = s1[i];
+		i++;
+		p++;
 	}
-	if (i == (flen - 1))
-		return (p = ft_calloc(1, 1));
-	p2 = (char *)s1;
-	s1 = s1 - i + flen - 2;         //s1 at 'c'
-	while (ft_strchr(set, *s1))
-	{
-		s1--;
-		flen--;					//s1 at 'last G' flen = 7
-	}
-	p = malloc((flen - i) * sizeof(char));
-	ft_memcpy(p, p2, (flen - i - 1));
-	p = p + i + 1;
-	*p = '\0';
-	return (p - i - 1);
+	*p = 0;
+	return (save);
 }
