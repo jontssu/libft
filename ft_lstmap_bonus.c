@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 19:26:46 by jole              #+#    #+#             */
-/*   Updated: 2022/11/03 15:16:32 by jole             ###   ########.fr       */
+/*   Created: 2022/11/03 18:47:35 by jole              #+#    #+#             */
+/*   Updated: 2022/11/07 19:19:57 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	long long	nb;
-	int			is_negative;
+	t_list	*lst2;
+	t_list	*tmp;
 
-	nb = 0;
-	is_negative = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	if (!lst)
+		return (0);
+	tmp = 0;
+	lst2 = ft_lstnew(f(lst->content));
+	if (lst)
+		lst = lst->next;
+	while (lst && lst2)
 	{
-		if (*str == '-')
-			is_negative = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		if (nb < 0)
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
 		{
-			if (is_negative == 1)
-				return (-1);
-			return (0);
+			ft_lstclear(&lst2, del);
+			break ;
 		}
-		nb = nb * 10 + (*str++ - 48);
+		ft_lstadd_back(&lst2, tmp);
+		lst = lst->next;
 	}
-	return (nb * is_negative);
+	return (lst2);
 }

@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 19:26:46 by jole              #+#    #+#             */
-/*   Updated: 2022/11/03 15:16:32 by jole             ###   ########.fr       */
+/*   Created: 2022/11/03 17:08:15 by jole              #+#    #+#             */
+/*   Updated: 2022/11/07 19:19:06 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	long long	nb;
-	int			is_negative;
-
-	nb = 0;
-	is_negative = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	if (!del || !lst || !*lst)
+		return ;
+	while (*lst)
 	{
-		if (*str == '-')
-			is_negative = -1;
-		str++;
+		ft_lstdelone(*lst, (*del));
+		(*lst) = (*lst)->next;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		if (nb < 0)
-		{
-			if (is_negative == 1)
-				return (-1);
-			return (0);
-		}
-		nb = nb * 10 + (*str++ - 48);
-	}
-	return (nb * is_negative);
+	(*lst) = 0;
 }

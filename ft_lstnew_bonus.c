@@ -6,7 +6,7 @@
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 17:10:00 by jole              #+#    #+#             */
-/*   Updated: 2022/11/02 17:15:18 by jole             ###   ########.fr       */
+/*   Updated: 2022/11/07 19:18:49 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
 
-	lst = malloc(sizeof(*lst));
+	lst = malloc(sizeof(t_list));
 	if (!lst)
 		return (0);
 	lst->content = content;

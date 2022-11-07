@@ -40,12 +40,12 @@ int	main(void)
 //	printf("%s\n", l);
 //	printf("%s\n", n);
 //	printf("-----\n");
-//	char p[111]="Helloworld!";
-//	char q[111]="!";
-//	char r[111]="HelloWorld!";
-//	char s[111]="!";
-//	printf("%zu\n", strlcat(p, q, 100));
-//	printf("%zu\n", ft_strlcat(r, s, 100));
+//	char p[80]="rrrrrr";
+//	char q[80]="a";
+//	char r[80]="rrrrrr";
+//	char s[80]="a";
+//	printf("%zu\n", strlcat(p, q, 70));
+//	printf("%zu\n", ft_strlcat(r, s, 70));
 //	printf("%s\n", p);
 //	printf("%s\n", r);
 //	printf("%d\n", ft_toupper('g'));
@@ -75,20 +75,20 @@ int	main(void)
 //	printf("%d\n", ft_strncmp(c, d, 3));
 //	char a[] = "Hello";
 //	char b[] = "Hello";
-//	printf("%s\n", memchr(a, 'u', 11));  
-//	printf("%s\n", ft_memchr(b, 'u', 11)); 
+//	printf("%s\n", memchr(a, 'u', 0));  
+//	printf("%s\n", ft_memchr(b, 'u', 0)); 
 //	char *a = "111122";
 //	char *b = "456789";
 //	char *c = "111122";
 //	char *d = "456789";
 //	printf("%d\n", memcmp(a, b, 5));  
 //	printf("%d\n", ft_memcmp(a, b, 5)); 
-//	char a[] = "1234567";
-//	char b[] = "567";
-//	char c[] = "1234567";
-//	char d[] = "567";
-//	printf("%s\n", strnstr(a, b, 5));
-//	printf("%s\n", ft_strnstr(c, d, 5));
+//	char a[] = "lorem ipsum dolor sit amet";
+//	char b[] = "dolor";
+//	char c[] = "lorem ipsum dolor sit amet";
+//	char d[] = "dolor";
+//	printf("%s\n", strnstr(a, b, 0));
+//	printf("%s\n", ft_strnstr(c, d, 0));
 //	printf("%d\n", atoi("9223372036854775815"));	
 //	printf("%d\n", ft_atoi("9223372036854775815"));	
 //	printf("%d\n", atoi("-9223372036854775815"));	
@@ -101,13 +101,13 @@ int	main(void)
 //	printf("%d\n", ft_atoi("   123"));	
 //	printf("%d\n", atoi(" -22"));	
 //	printf("%d\n", ft_atoi(" -22"));	
-//	printf("%s\n", calloc(10, 4));
-//	printf("%s\n", ft_calloc(10, 4));
+//	printf("%s\n", calloc(9223372036854775807, 3));
+//	printf("%s\n", ft_calloc(9223372036854775807, 3));
 //	char s[50] = "12345";
 //	printf("%s\n", ft_strdup(s));
-//	char a[] = "12345";
+//	char a[] = "tripouille";
 //	char *p;
-//	p = ft_substr(a, 3, 5);
+//	p = ft_substr(a, 0, 42000);
 //	printf("%s\n", p);
 //char	a[] = "";
 //char	b[] = "lol";
@@ -119,7 +119,7 @@ int	main(void)
 //
 //	 i = 0;
 //	char **array;
-//	char p[] = " a  sdf sdf sdf sdf    ";
+//	char p[] = " moi hei kissa a a ";
 //	array = ft_split(p, ' ');
 //	while (array[i])
 //	{
@@ -130,6 +130,6 @@ int	main(void)
 //	printf("%s\n", ft_itoa(156));
 //	printf("%s\n", ft_itoa(-623));
 //	printf("%s\n", ft_itoa(-0));
-	ft_putnbr_fd(-2147483608, 1);
+//	ft_putnbr_fd(-2147483608, 1);
 	return (0);
 }
