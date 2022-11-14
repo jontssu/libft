@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/27 19:26:46 by jole              #+#    #+#             */
-/*   Updated: 2022/11/03 15:16:32 by jole             ###   ########.fr       */
+/*   Created: 2022/11/07 20:00:10 by jole              #+#    #+#             */
+/*   Updated: 2022/11/07 22:59:16 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
+		nb = nb * 10 + (*str++ - 48);
 		if (nb < 0)
 		{
 			if (is_negative == 1)
 				return (-1);
 			return (0);
 		}
-		nb = nb * 10 + (*str++ - 48);
 	}
 	return (nb * is_negative);
 }
