@@ -6,13 +6,15 @@
 /*   By: jole <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 16:42:33 by jole              #+#    #+#             */
-/*   Updated: 2022/11/07 20:17:12 by jole             ###   ########.fr       */
+/*   Updated: 2023/02/07 17:41:21 by jole             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 typedef struct s_list
 {
@@ -20,6 +22,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int		ft_putchar(char c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -54,6 +57,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr(char *s);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -64,5 +68,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+int		ft_printf(const char *s, ...);
+int		print_argument(va_list ap, const char *s, int ret);
+int		print_argument2(va_list ap, const char *s, int ret);
+int		putnbr_base(int nb, int base, char *str);
+int		putnbr_base2(unsigned long long nb, int base, int caps);
 
 #endif
